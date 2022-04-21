@@ -1,0 +1,11 @@
+{
+    "hist": {
+        "y_label": "Érték száma",
+        "title": "hisztogram"
+        },
+    "line": {
+        "x_label": "gépelések",
+        "y_label": "érték",
+        "title": ". felhasználó gépelései"
+    }
+}
