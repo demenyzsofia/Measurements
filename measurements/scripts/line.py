@@ -3,11 +3,15 @@ import pandas as pd
 import json
 
 
-f = open('language/hu.json', encoding='utf-8')
-data = json.load(f)
-f.close()
+def read_from_json(lang):
+    f = open('language/' + lang + '.json', encoding='utf-8')
+    data = json.load(f)
+    f.close()
+    return data
 
-def typing_line_plot_sapipin(dataset, user_number, head_list, OUTPUT_PNG):
+
+def typing_line_plot_sapipin(dataset, user_number, head_list, OUTPUT_PNG, language):
+    data = read_from_json(language)
     userdata_lower_limit = user_number * 20 - 20
     userdata_upper_limit = user_number * 20
     HT1_userdata = dataset[userdata_lower_limit:userdata_upper_limit][head_list[0:1]]
@@ -37,7 +41,8 @@ def typing_line_plot_sapipin(dataset, user_number, head_list, OUTPUT_PNG):
     plt.close()
 
 
-def typing_line_plot_datasets(df, userid, head_list, UP_poz, OUTPUT_PNG):
+def typing_line_plot_datasets(df, userid, head_list, UP_poz, OUTPUT_PNG, language):
+    data = read_from_json(language)
     user_data = df.loc[df.iloc[:, -1].isin([userid])]
     dataframe = pd.DataFrame()
     for i in range(UP_poz-1):
@@ -54,8 +59,8 @@ def typing_line_plot_datasets(df, userid, head_list, UP_poz, OUTPUT_PNG):
     plt.subplot2grid((2, 2), (0, 0), colspan=2)
     for i in range (user_data.shape[1]):
         plt.plot(dataframe1.iloc[i])
-    plt.xlabel('gépelések')
-    plt.ylabel('érték')
+    plt.xlabel(data['line']['x_label'])
+    plt.ylabel(data['line']['y_label'])
 
     csfont = {'fontname': 'Comic Sans MS'}
     plt.title(str(userid) + data['line']['title'], **csfont, fontsize='14')

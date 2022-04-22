@@ -7,5 +7,12 @@
         "x_label": "gépelések",
         "y_label": "érték",
         "title": ". felhasználó gépelései"
+    },
+    "detectorgroup_box": {
+        "detector" : "Detektor",
+        "auc_linear": "AUC Lineáris modellek",
+        "auc_ensemble": "AUC Együttes tanuláson alapuló modellek",
+        "auc_probabilistic": "AUC Valószínűségi modellek",
+        "auc_proximity": "AUC Közelségalapú modellek"
     }
 }

@@ -1,0 +1,18 @@
+{
+    "hist": {
+        "y_label": "Value number",
+        "title": "histogram"
+        },
+    "line": {
+        "x_label": "typing",
+        "y_label": "value",
+        "title": ". user typings"
+    },
+    "detectorgroup_box": {
+        "detector" : "Detector",
+        "auc_linear": "AUC Linear models",
+        "auc_ensemble": "AUC Outlier Ensembles models",
+        "auc_probabilistic": "AUC Probabilistic Models",
+        "auc_proximity": "AUC Proximity-based models"
+    }
+}
