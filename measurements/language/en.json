@@ -14,5 +14,9 @@
         "auc_ensemble": "AUC Outlier Ensembles models",
         "auc_probabilistic": "AUC Probabilistic Models",
         "auc_proximity": "AUC Proximity-based models"
+    },
+    "detector_auc_box": {
+        "dataset" : "Dataset",
+        "compare_models": " models"
     }
 }

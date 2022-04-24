@@ -14,5 +14,9 @@
         "auc_ensemble": "AUC Együttes tanuláson alapuló modellek",
         "auc_probabilistic": "AUC Valószínűségi modellek",
         "auc_proximity": "AUC Közelségalapú modellek"
+    },
+    "detector_auc_box": {
+        "dataset" : "Adathalmaz",
+        "compare_models": " modellek"
     }
 }

@@ -10,12 +10,12 @@ def read_from_json(lang):
     return data
 
 
-def my_boxplot_eer(dataset1, dataset2, dataset3, dataset4, dataset5, detector, data,  language):
-    data_eer = [dataset1.iloc[:, 1], dataset2.iloc[:, 1], dataset3.iloc[:, 1], dataset4.iloc[:, 1], dataset5.iloc[:, 1]]
+def my_boxplot_auc(dataset1, dataset2, dataset3, dataset4, dataset5, detector, data,  language):
+    data_auc = [dataset1.iloc[:, -1], dataset2.iloc[:, -1], dataset3.iloc[:, -1], dataset4.iloc[:, -1], dataset5.iloc[:, -1]]
 
     fig = plt.figure(figsize=(7, 6))
     ax = fig.add_subplot(111)
-    bp = ax.boxplot(data_eer, widths=(0.5, 0.5, 0.5, 0.5, 0.5), patch_artist=True)
+    bp = ax.boxplot(data_auc, widths=(0.5, 0.5, 0.5, 0.5, 0.5), patch_artist=True)
 
     #szines, vonalvastagsagok, stb.
     colors = ['#D35400', '#219631', '#3e4444', '#405d27', '#bc5a45']
@@ -34,12 +34,12 @@ def my_boxplot_eer(dataset1, dataset2, dataset3, dataset4, dataset5, detector, d
     font = {'fontname': 'Times New Roman'}
     ax.set_xticklabels(['sapipin', 'easy', 'strong', 'logicalstrong', 'keystroke2014'])
     ax.set_xlabel(data['detector_auc_box']['dataset'], **font, size=fontsize)
-    ax.set_ylabel("EER", **font, size=fontsize)
+    ax.set_ylabel("AUC", **font, size=fontsize)
     ax.set_title(str(detector.upper() + data['detector_auc_box']['compare_models']), **font, size=fontsize-2)
-    plt.savefig("plots/" + language + '/all_dataset/' + detector + '_eer.png')
+    plt.savefig("plots/" + language + '/all_dataset/' + detector + '_auc.png')
 
 
-def detector_eer_box(language):
+def detector_auc_box(language):
     data = read_from_json(language)
     csv_files_list = ["sapipin_pca.csv", "easy_pca.csv", "strong_pca.csv", "logicalstrong_pca.csv", "keystroke2014_pca.csv",
                       "sapipin_abod.csv", "easy_abod.csv", "strong_abod.csv", "logicalstrong_abod.csv", "keystroke2014_abod.csv",
@@ -60,5 +60,5 @@ def detector_eer_box(language):
         dataset5 = pd.read_csv("detectors_output/" + str(csv_files_list[file_index+4]))
 
         detector = csv_files_list[file_index].split('_')[1].split('.')[0]
-        my_boxplot_eer(dataset1, dataset2, dataset3, dataset4, dataset5, detector, data, language)
+        my_boxplot_auc(dataset1, dataset2, dataset3, dataset4, dataset5, detector, data, language)
         file_index = file_index + 5
