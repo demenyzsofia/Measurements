@@ -18,5 +18,13 @@
     "detector_auc_box": {
         "dataset" : "Dataset",
         "compare_models": " models"
+    },
+     "roccurve": {
+        "linear_models": "Linear models",
+        "proximity_based": "Proximity-based models",
+        "outlier_ensembles":"Outlier Ensembles models",
+        "probabilistic": "Probabilistic models",
+        "fpr": "False positive rate (FPR)",
+        "tpr": "True positive rate (TPR)"
     }
 }

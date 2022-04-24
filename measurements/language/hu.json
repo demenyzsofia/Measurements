@@ -18,5 +18,13 @@
     "detector_auc_box": {
         "dataset" : "Adathalmaz",
         "compare_models": " modellek"
+    },
+    "roccurve": {
+        "linear_models": "Lineáris modellek",
+        "proximity_based": "Közelség alapú modellek",
+        "outlier_ensembles":"Együttes tanításon alapuló modellek",
+        "probabilistic": "Valószínűségi modellek",
+        "fpr": "Téves pozitívak aránya (FPR)",
+        "tpr": "Igaz pozitívak aránya (TPR)"
     }
 }
