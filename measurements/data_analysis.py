@@ -1,5 +1,4 @@
 import pandas as pd
-
 from scripts.hist import all_user_HT_hist
 from scripts.hist import all_user_UD_hist
 from scripts.line import typing_line_plot_sapipin
@@ -31,22 +30,19 @@ def line_plot(dataset, head_list, OUTPUT_PNG, language):
 
 
 if __name__ == '__main__':
-    dataset_list = ['sapipin.csv', 'easy.csv', 'keystroke2014.csv', 'strong.csv', 'logicalstrong.csv']
+    """
+        select the language
+    """
+    #language = 'en'
     language = 'hu'
 
+    dataset_list = ['sapipin.csv', 'easy.csv', 'keystroke2014.csv', 'strong.csv', 'logicalstrong.csv']
     for file in dataset_list:
-        #colors for diagrams
         colors = ["#6A5ACD", "#008080", "#4682B4", "#87CEEB", "#4169E1", "#191970", "#778899", "#2F4F4F"]
         counter = 0
-
-        #the current dataset name
         FILENAME = file
-        #read the dataset
         dataset = pd.read_csv(f'datasets/{file}')
-
-        #number of users in dataset
         NUM_USERS = int(dataset.iloc[-1]['userid'])
-
 
         """
             hist plots
