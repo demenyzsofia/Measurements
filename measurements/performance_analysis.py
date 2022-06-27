@@ -31,8 +31,7 @@ if __name__ == '__main__':
     """
     Detector group - box plots
     """
-    #detectorgroup_box(language)
-
+    detectorgroup_box(language)
     """
     Detector auc - box plots
     """
@@ -68,7 +67,7 @@ if __name__ == '__main__':
     """
     select a detector group
     """
-    roccurve(linear_models, "linear_models", data["roccurve"]["linear_models"], language, file)
+    #roccurve(linear_models, "linear_models", data["roccurve"]["linear_models"], language, file)
     #roccurve(proximity_based, "proximity_based", data["roccurve"]["proximity_based"], language, file)
     #roccurve(outlier_ensembles, "outlier_ensembles", data["roccurve"]["outlier_ensembles"], language, file)
     #roccurve(probabilistic, "probabilistic", data["roccurve"]["probabilistic"], language, file)

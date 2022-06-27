@@ -77,7 +77,7 @@ if __name__ == '__main__':
         percentage = 75
         percentage = percentage / 100
 
-        models = [(PCA(random_state=131), "pca.csv") , (OCSVM(), "ocsvm.csv"),
+        models = [(PCA(random_state=131), "pca.csv"), (OCSVM(), "ocsvm.csv"),
             (KNN(n_neighbors=3), "knn.csv"), (HBOS(), "hbos.csv"),
             (LOF(), "lof.csv"), (IForest(), "iforest.csv"),
             (COPOD(), "copod.csv"), (ABOD(), "abod.csv"),
